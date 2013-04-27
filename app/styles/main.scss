@@ -2,11 +2,16 @@
 @import "compass_twitter_bootstrap_responsive";
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
-.center {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+.color-list {
+  padding-top: 5px;
+  list-style-type: none;
+}
+
+.color-list li {
+  max-height: 50px;
+  overflow: hidden;
+  padding: 5px;
 }

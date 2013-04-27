@@ -1,13 +1,52 @@
 <div navbar="applets"></div>
 
-<div class="well">
+
+<div class="container">
     <h2>Ulam Spiral</h2>
 
-    <div class="span7 center">
-        <canvas id="ulamCanvas" width="600" height="600"></canvas>
-    </div>
+    <div class="row">
+        <div id="ulam-canvas-container" class="span8"></div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur culpa dignissimos, dolor
-        doloremque esse facere fugit ipsa laboriosam minima, necessitatibus nemo officia officiis provident quasi, quia
-        velit voluptates!</p>
+        <div class="span4">
+            <form novalidate>
+                <fieldset>
+                    <legend>Spiral Options</legend>
+
+                    <div class="control-group">
+                        <label class="control-label">Width</label>
+
+                        <div class="controls">
+                            <input class="input-xlarge" type="number" min="1" ng-model="width"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" ng-click="draw()">Draw</button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="color" ng-model="newColor"/>
+                            <button class="btn" ng-click="addColor()">Add Color</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <ul class="color-list">
+                                <li ng-repeat="color in colors" style="background: {{color.value}};">
+                                    <button class="btn btn-danger pull-right" ng-click="removeColor(color.id)">X
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>
