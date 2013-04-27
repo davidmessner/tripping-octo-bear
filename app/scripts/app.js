@@ -13,6 +13,9 @@ angular.module('playgroundApp', [])
             .when('/about', {
                 templateUrl: 'views/about.html'
             })
+            .when('/ulam', {
+                templateUrl: 'views/applets/ulam.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
