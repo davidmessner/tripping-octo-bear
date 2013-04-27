@@ -3,19 +3,9 @@
 <div class="well">
     <h2>Ulam Spiral</h2>
 
-    <div class="span6 center">
-        <canvas id="ulamCanvas" width="500" height="500"></canvas>
+    <div class="span7 center">
+        <canvas id="ulamCanvas" width="600" height="600"></canvas>
     </div>
-
-    <script type="text/paperscript" canvas="ulamCanvas">
-        var path = new Path.Circle(view.center, 100);
-        path.strokeColor = 'red';
-        path.strokeWidth = 30;
-
-        function onResize(event) {
-            path.position = view.center
-        }
-    </script>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur culpa dignissimos, dolor
         doloremque esse facere fugit ipsa laboriosam minima, necessitatibus nemo officia officiis provident quasi, quia
