@@ -14,12 +14,14 @@
     };
 
     function Spiral(width, stopCount) {
-        if (!(this instanceof Spiral)) return new Spiral(width);
+        if (!(this instanceof Spiral)) return new Spiral(width, stopCount);
 
         if (width % 2 === 0) throw new Error('The width value must be an odd number.');
         if (stopCount < 1) throw new Error('There must be at least one step.');
 
         this.matrix = [];
+        this.width = width;
+        this.stopCount = stopCount;
 
         //  Generate blank matrix
         for (var x = 0; x < width; x++) {
@@ -30,7 +32,7 @@
 
         //  Walk spiral
         var position = new Point(Math.floor(width / 2.0), Math.floor(width / 2.0));
-        var end = new Point(width - 1, width - 1);
+        var end = new Point(width, width - 1);
         var facing = 0;
         var crum = 0;
         var jumpDist = 1;

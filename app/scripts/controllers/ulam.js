@@ -3,7 +3,7 @@
 angular.module('playgroundApp')
     .controller('UlamCtrl', function ($scope) {
         $scope.seedId = 5;
-        $scope.width = 1;
+        $scope.width = 3;
         $scope.colors = [
             {id: 0, value: 'red'},
             {id: 1, value: 'blue'},
@@ -23,8 +23,18 @@ angular.module('playgroundApp')
             });
         };
         $scope.draw = function () {
-            var circle = $scope.paper.circle(250, 250, 100);
-            circle.attr('stroke', 'black');
-            circle.attr('fill', 'red');
+            console.log('gen spiral');
+            var spiral = ulam.Spiral($scope.width, $scope.colors.length),
+                paper = $scope.paper,
+                blockWidth = (paper.width / spiral.width),
+                blockHeight = (paper.height / spiral.width);
+
+            console.log('draw spiral');
+            for (var x = 0; x < spiral.width; x++) {
+                for (var y = 0; y < spiral.width; y++) {
+                    var block = paper.rect(blockWidth * x, blockHeight * y, blockWidth, blockHeight);
+                    block.attr('fill', $scope.colors[spiral.matrix[x][y]].value);
+                }
+            }
         };
     });

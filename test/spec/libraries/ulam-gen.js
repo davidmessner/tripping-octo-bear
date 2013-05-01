@@ -62,5 +62,10 @@ describe('Library: Ulam Generator', function () {
             expect(spiral.matrix[2][3] === 3);
             expect(spiral.matrix[4][2] === 2);
         });
+
+        it('should populate the last cell of a spiral', function () {
+            var spiral = new ulam.Spiral(3, 3);
+            expect(spiral.matrix[2][2] === 2);
+        });
     });
 });
